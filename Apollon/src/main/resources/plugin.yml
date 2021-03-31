@@ -1,0 +1,6 @@
+name: Apollon
+author: QuiiBz
+version: 1.0
+main: fr.quiibz.apollon.Apollon
+depend:
+  - Zeus

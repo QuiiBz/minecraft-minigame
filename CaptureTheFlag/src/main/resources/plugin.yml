@@ -1,0 +1,9 @@
+name: CTF
+author: QuiiBz
+version: 1.0
+main: fr.quiibz.ctf.CTF
+depend:
+  - GemAPI
+  - Poseidon
+commands:
+  kit:

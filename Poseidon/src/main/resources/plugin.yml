@@ -1,0 +1,9 @@
+name: Poseidon
+author: QuiiBz
+version: 1.0
+main: fr.quiibz.poseidon.Poseidon
+depend:
+  - GemAPI
+commands:
+  re:
+  forcestart:

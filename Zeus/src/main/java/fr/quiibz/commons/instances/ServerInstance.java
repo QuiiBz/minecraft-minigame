@@ -1,0 +1,150 @@
+package fr.quiibz.commons.instances;
+
+import net.md_5.bungee.api.ProxyServer;
+import net.md_5.bungee.api.config.ServerInfo;
+
+import java.net.InetSocketAddress;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
+
+public class ServerInstance {
+
+    /*
+     *  FIELDS
+     */
+
+    private ServerType serverType;
+    private int serverId;
+    private String id;
+    private String ip;
+    private int port;
+    private ServerStatus status;
+    private List<UUID> players;
+    private int maxPlayers;
+    private String map;
+    private String host;
+    private Map<String, String> config;
+
+    /*
+     *  CONSTRUCTOR
+     */
+
+    public ServerInstance() { }
+
+    public ServerInstance(ServerType serverType, int serverId, String id, String ip, int port, ServerStatus status, List<UUID> players, int maxPlayers, String map, String host, Map<String, String> config) {
+
+        this.serverType = serverType;
+        this.serverId = serverId;
+        this.id = id;
+        this.ip = ip;
+        this.port = port;
+        this.status = status;
+        this.players = players;
+        this.maxPlayers = maxPlayers;
+        this.map = map;
+        this.host = host;
+        this.config = config;
+    }
+
+    /*
+     *  METHODS
+     */
+
+    public ServerType getServerType() {
+
+        return this.serverType;
+    }
+
+    public int getServerId() {
+
+        return this.serverId;
+    }
+
+    public String getId() {
+
+        return this.id;
+    }
+
+    public String getIp() {
+
+        return this.ip;
+    }
+
+    public void setIp(String ip) {
+
+        this.ip = ip;
+    }
+
+    public int getPort() {
+
+        return this.port;
+    }
+
+    public String getName() {
+
+        return this.serverType.getName() + this.id;
+    }
+
+    public ServerStatus getStatus() {
+
+        return this.status;
+    }
+
+    public void setStatus(ServerStatus status) {
+
+        this.status = status;
+    }
+
+    public List<UUID> getPlayers() {
+
+        return this.players;
+    }
+
+    public void setPlayers(List<UUID> players) {
+
+        this.players = players;
+    }
+
+    public int getMaxPlayers() {
+
+        return this.maxPlayers;
+    }
+
+    public void setMaxPlayers(int maxPlayers) {
+
+        this.maxPlayers = maxPlayers;
+    }
+
+    public String getMap() {
+
+        return this.map;
+    }
+
+    public void setMap(String map) {
+
+        this.map = map;
+    }
+
+    public String getHost() {
+
+        return this.host;
+    }
+
+    public Map<String, String> getConfig() {
+
+        return this.config;
+    }
+
+    public void setConfig(Map<String, String> config) {
+
+        this.config = config;
+    }
+
+    public ServerInfo toServerInfo() {
+
+        String name = this.getName();
+
+        return ProxyServer.getInstance().constructServerInfo(name, InetSocketAddress.createUnresolved(this.ip, this.port), name, false);
+    }
+}

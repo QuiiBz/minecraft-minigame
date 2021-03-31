@@ -1,0 +1,7 @@
+name: Duels
+author: QuiiBz
+version: 1.0
+main: fr.quiibz.duels.Duels
+depend:
+  - GemAPI
+  - Poseidon

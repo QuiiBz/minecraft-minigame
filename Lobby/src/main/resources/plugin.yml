@@ -1,0 +1,8 @@
+name: GemLobby
+author: QuiiBz
+version: 1.0
+main: fr.quiibz.lobby.Lobby
+depend:
+  - GemAPI
+commands:
+  spawn:

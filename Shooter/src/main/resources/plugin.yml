@@ -1,0 +1,7 @@
+name: Shooter
+author: QuiiBz
+version: 1.0
+main: fr.quiibz.shooter.Shooter
+depend:
+  - GemAPI
+  - Poseidon
